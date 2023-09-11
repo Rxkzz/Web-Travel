@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title>Cahaya Travel</title>
+    <link rel="stylesheet" href="style.css">
+   </head>
+<body>
+  <nav>
+    <div class="nav-content">
+      <div class="logo">
+        <a href="#">Cahaya Travel</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="pemesanan.html">Order</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <section class="home"></section>
+  <div class="text">
+    <h2>Secepat Kilat!</h2>
+    <p>Selamat datang di perusahaan travel kami, Cahaya Travel!
+
+        Kami adalah agensi perjalanan yang akan menerangi perjalanan liburan Anda. Dengan keahlian dan dedikasi, kami memastikan setiap momen perjalanan Anda dipenuhi dengan cahaya kebahagiaan dan keceriaan.
+        
+        Kami mengerti bahwa liburan adalah waktu yang berharga untuk menyinari kehidupan Anda. Oleh karena itu, kami menawarkan paket perjalanan yang dirancang secara khusus untuk memberikan pengalaman bercahaya di destinasi paling menakjubkan di seluruh dunia.
+        
+        Dengan panduan kami yang terampil dan pengetahuan mendalam tentang tempat-tempat terang benderang, kami akan membimbing Anda melalui petualangan yang memukau. Mulai dari jalan-jalan di kota-kota yang bercahaya hingga menjelajahi keindahan alam yang memancarkan keajaiban.
+        
+     </p>
+    <br><p>Kami berkomitmen untuk memberikan layanan yang terang dan terbaik kepada Anda. Kami akan membantu Anda mengatur semua detail perjalanan mulai dari tiket pesawat, akomodasi yang menyilaukan, hingga kegiatan yang memancarkan kegembiraan.
+        
+        Bersama Cahaya Wisata, Anda dapat menemukan kecerahan dalam setiap langkah perjalanan Anda. Jadikan liburan Anda sebagai sumber inspirasi dan pencerahan untuk jiwa Anda yang bersinar.
+        
+        Terima kasih telah memilih Cahaya Wisata sebagai teman perjalanan Anda. Mari kita bersama-sama menyalakan api petualangan dan menyinari dunia dengan keindahan yang ada di dalamnya.
+        
+        Hubungi kami sekarang untuk mewujudkan perjalanan bercahaya yang tak terlupakan!
+        
+        Salam cahaya,
+        Tim Cahaya Wisata</p><br>
+        </div>
+
+        
+
+  <div class="card-container">
+    <div class="card-track">
+      <div class="card">
+        <img src="./foto/amster.jpeg" alt="Gambar 1">
+        <p>Belanda</p>
+      </div>
+      <div class="card">
+        <img src="./foto/japan.jpeg" alt="Gambar 2">
+        <p>Japan</p>
+      </div>
+      <div class="card">
+        <img src="./foto/Merlion, Singapore.jpeg" alt="Gambar 3">
+        <p>Singapore</p>
+      </div>
+      <div class="card">
+        <img src="./foto/paris.jpeg" alt="Gambar 4">
+        <p>Paris</p>
+      </div>
+      <div class="card">
+        <img src="./foto/new york.jpeg" alt="Gambar 5">
+        <p>New York</p>
+      </div>
+      <div class="card">
+        <img src="./foto/rusia.jpeg" alt="Gambar 6">
+        <p>Rusia</p>
+      </div>
+      <div class="card">
+        <img src="./foto/turki.jpeg" alt="Gambar 7">
+        <p>Turki</p>
+      </div>
+      <div class="card">
+        <img src="./foto/thailand.png" alt="Gambar 8">
+        <p>Thailand</p>
+      </div>
+      <!-- Tambahkan lebih banyak kartu jika diperlukan -->
+    </div>
+    <button class="prev-btn">&#10094;</button>
+    <button class="next-btn">&#10095;</button>
+  </div>
+  </div>
+
+
+
+  <script>
+  let nav = document.querySelector("nav");
+    window.onscroll = function() {
+      if(document.documentElement.scrollTop > 20){
+        nav.classList.add("sticky");
+      }else {
+        nav.classList.remove("sticky");
+      }
+    }
+  </script>
+
+<script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const cardContainer = document.querySelector('.card-container');
+      const cardTrack = document.querySelector('.card-track');
+      const cards = Array.from(document.querySelectorAll('.card'));
+      const prevBtn = document.querySelector('.prev-btn');
+      const nextBtn = document.querySelector('.next-btn');
+  
+      let cardWidth = cards[0].offsetWidth;
+      let currentPosition = 0;
+      let trackWidth = cardWidth * cards.length;
+  
+      function updateCardWidth() {
+        cardWidth = cards[0].offsetWidth;
+        trackWidth = cardWidth * cards.length;
+        cardTrack.style.width = trackWidth + 'px';
+        cardTrack.style.transform = `translateX(-${currentPosition}px)`;
+      }
+  
+      function handleResize() {
+        updateCardWidth();
+      }
+  
+      function handlePrevClick() {
+        if (currentPosition > 0) {
+          currentPosition -= cardWidth;
+          cardTrack.style.transform = `translateX(-${currentPosition}px)`;
+        }
+      }
+  
+      function handleNextClick() {
+        if (currentPosition < trackWidth - cardContainer.offsetWidth) {
+          currentPosition += cardWidth;
+          cardTrack.style.transform = `translateX(-${currentPosition}px)`;
+        }
+      }
+  
+      prevBtn.addEventListener('click', handlePrevClick);
+      nextBtn.addEventListener('click', handleNextClick);
+      window.addEventListener('resize', handleResize);
+  
+      updateCardWidth();
+    });
+  </script>
+
+</body>
+</html>

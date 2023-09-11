@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pemesanan Produk</title>
+  <link rel="stylesheet" type="text/css" href="pemesanan.css">
+  <link rel="stylesheet" href="pemesanan.css">
+</head>
+<body>
+  <nav>
+    <div class="nav-content">
+      <div class="logo">
+        <a href="#">Cahaya Travel</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="pemesanan.html">Order</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <section class="home"></section>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 160px;
+    }
+    
+    .form-group {
+      margin-bottom: 15px;
+    }
+    
+    .form-group label {
+      display: block;
+      font-weight: bold;
+    }
+    
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group select {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    
+    .form-group input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    .form-group input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Form Pemesanan Travel</h1>
+    <form>
+      <div class="form-group">
+        <label for="nama">Nama:</label>
+        <input type="text" id="nama" name="nama" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="tujuan">Tujuan:</label>
+        <select id="tujuan" name="tujuan" required>
+          <option value="">Pilih tujuan</option>
+          <option value="Belanda">Belanda</option>
+          <option value="Japan">Japan</option>
+          <option value="Singapore">Singapore</option>
+          <option value="Paris">Paris</option>
+          <option value="Paris">New York</option>
+          <option value="Rusia">Rusia</option>
+          <option value="Turki">Turki</option>
+          <option value="Thailand">Thailand</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="tujuan">Tipe penerbangan:</label>
+        <select id="tujuan" name="tujuan" required>
+          <option value="">Pilih kelas penerbangan</option>
+          <option value="Ekonomi">Ekonomi</option>
+          <option value="Ekslusif">Premium</option>
+          <option value="Ekslusif">Bisnis</option>
+          <option value="Ekslusif">First class</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="tujuan">Tipe pesawat:</label>
+        <select id="tujuan" name="tujuan" required>
+          <option value="">Pesawat</option>
+          <option value="Ekonomi">Lion air</option>
+          <option value="Ekslusif">Boeing</option>
+          <option value="Ekslusif">Airbus</option>
+          <option value="Ekslusif">Garuda</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="tanggal">Tanggal Keberangkatan:</label>
+        <input type="date" id="tanggal" name="tanggal" required>
+      </div>
+      <div class="form-group">
+        <a href="./acc.html"><input type="submit" value="Pesan Sekarang" ></a>
+      </div>
+    </form>
+  </div>
+
+
+
+
+  <script>
+  let nav = document.querySelector("nav");
+    window.onscroll = function() {
+      if(document.documentElement.scrollTop > 20){
+        nav.classList.add("sticky");
+      }else {
+        nav.classList.remove("sticky");
+      }
+    }
+  </script>
+    
+</body>
+</html>
+  
